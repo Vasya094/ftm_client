@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.spiner-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 26%;
+  left: 0;
+  background-color: rgba(196, 196, 196, 0.459);
+}
+
+.spiner {
+  position: relative;
+  top: 20%;
+  left: 46%;
+  width: 4rem !important;
+  height: 4rem !important;
+}
