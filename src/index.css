@@ -42,3 +42,21 @@ h2 {
   width: 4rem !important;
   height: 4rem !important;
 }
+
+/* MEDIA SCREEN 
+TODO заменить на стандартные механизмы */
+/* ------------------------------------ */
+
+@media screen and (max-width: 992px) {
+  .hidden-md-down {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hidden-md-up {
+    display: none;
+  }
+}
+
+/* ------------------------------------ */

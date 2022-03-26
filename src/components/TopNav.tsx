@@ -38,27 +38,10 @@ const TopNav = () => {
   const [show, setShow] = useState(false);
   const handleClose = (val) => setShow(val);
 
-  return (
-    <>
-    <Navbar  expand={false}>
-  <Container fluid>
-    <Link to='/'>
-      <Image src={MainLogo} className="w-12" rounded />
-      </Link>
-    <Navbar.Toggle onClick={() => handleClose(true)} aria-controls="offcanvasNavbar"  />
-    <Navbar.Offcanvas
-      id="offcanvasNavbar"
-      show={show}
-      style={{border: 'none'}}
-      onHide={() => handleClose(false)}
-      aria-labelledby="offcanvasNavbarLabel"
-      placement="end"
-    >
-      <Offcanvas.Header closeButton>
-        <Offcanvas.Title id="offcanvasNavbarLabel">{t('Menu')}</Offcanvas.Title>
-      </Offcanvas.Header>
-      <Offcanvas.Body>
-        <Nav className="justify-content-end flex-grow-1 pe-3">
+
+
+  const Menu = () => {
+    return <>
           {auth !== null && (
             <>
               <Link onClick={() => handleClose(false)} className='nav-link' to='/my_appliactions'>
@@ -69,7 +52,7 @@ const TopNav = () => {
               </Link>
             </>
           )}
-          {auth !== null && (
+                   {auth !== null && (
             <Link className='nav-link pointer' to='/' onClick={logout}>
               {t('logout')} 
             </Link>
@@ -84,7 +67,8 @@ const TopNav = () => {
               </Link>
             </>
           )}
-          <NavDropdown id='dropdown-basic-button' title={t('change_lang')}>
+
+<NavDropdown id='dropdown-basic-button' title={t('change_lang')}>
             <NavDropdown.Item onClick={() => changeLanguage("en")}>
               English
             </NavDropdown.Item>
@@ -95,9 +79,43 @@ const TopNav = () => {
               العربية
             </NavDropdown.Item>
           </NavDropdown>
+</>
+  }
+
+  return (
+    <>
+    <Navbar  expand={false}>
+  <Container fluid>
+    <Link to='/'>
+      <Image src={MainLogo} className="w-12" rounded />
+      </Link>
+
+<div className="hidden-md-down flex">
+
+{Menu()}
+</div>
+
+<div className="hidden-md-up">
+<Navbar.Toggle onClick={() => handleClose(true)} aria-controls="offcanvasNavbar"  />
+    <Navbar.Offcanvas
+      id="offcanvasNavbar"
+      show={show}
+      style={{border: 'none'}}
+      onHide={() => handleClose(false)}
+      aria-labelledby="offcanvasNavbarLabel"
+      placement="end"
+    >
+      <Offcanvas.Header closeButton>
+        <Offcanvas.Title id="offcanvasNavbarLabel">{t('Menu')}</Offcanvas.Title>
+      </Offcanvas.Header>
+      <Offcanvas.Body>
+        <Nav className="justify-content-end flex-grow-1 pe-3">
+        {Menu()}
         </Nav>
       </Offcanvas.Body>
     </Navbar.Offcanvas>
+</div>
+
   </Container>
 </Navbar>
 </>
