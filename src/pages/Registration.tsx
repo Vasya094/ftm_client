@@ -42,7 +42,7 @@ const Register: React.FC<RouteProps> = () => {
 
   return (
     <>
-      <div className='container-fluid bg-secondary p-5 text-center'>
+      <div className='container-fluid p-5 text-center'>
         <h1>{t('registration_lable')}</h1>
       </div>
 

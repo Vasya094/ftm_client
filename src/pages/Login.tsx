@@ -7,8 +7,8 @@ import { RouteProps, useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 
 const Login: React.FC<RouteProps> = () => {
-  const [email, setEmail] = useState("ryan@gmail.com");
-  const [password, setPassword] = useState("rrrrrr");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const Login: React.FC<RouteProps> = () => {
 
   return (
     <>
-      <div className="container-fluid bg-secondary p-5 text-center">
+      <div className="container-fluid p-5 text-center">
         <h1>{t('login')}</h1>
       </div>
 

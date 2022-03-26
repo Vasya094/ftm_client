@@ -1,6 +1,5 @@
 import React, { Suspense } from "react"
 import ReactDOM from "react-dom"
-import "./index.css"
 import "antd/dist/antd.css"
 import App from "./App"
 import { createStore } from "redux"
@@ -9,6 +8,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import rootReducer from "./reducers"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./i18n"
+import "./index.css"
 
 const store = createStore(rootReducer, composeWithDevTools())
 

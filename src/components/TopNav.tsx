@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import {
   Container,
-  Dropdown,
-  DropdownButton,
   Image,
   Nav,
   Navbar,
@@ -42,15 +40,16 @@ const TopNav = () => {
 
   return (
     <>
-    <Navbar bg="light" expand={false}>
+    <Navbar  expand={false}>
   <Container fluid>
     <Link to='/'>
       <Image src={MainLogo} className="w-12" rounded />
       </Link>
-    <Navbar.Toggle onClick={() => handleClose(true)} aria-controls="offcanvasNavbar" />
+    <Navbar.Toggle onClick={() => handleClose(true)} aria-controls="offcanvasNavbar"  />
     <Navbar.Offcanvas
       id="offcanvasNavbar"
       show={show}
+      style={{border: 'none'}}
       onHide={() => handleClose(false)}
       aria-labelledby="offcanvasNavbarLabel"
       placement="end"

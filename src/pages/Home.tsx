@@ -2,14 +2,11 @@ import i18next from "i18next"
 import { useState, useEffect } from "react"
 import { Button, Spinner } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
-import { Route } from "react-router"
 import { allApplications } from "../actions/applications"
 import FilterModal from "../components/FilterModal"
 import SmallCard from "../components/SmallAppCard"
 import { MainFiltersTypes, NewApplicationTypes } from "../utils/tsTypes"
-// import SmallCard from "../components/cards/SmallCard";
-// import Search from "../components/forms/Search";
-import "./../App.css"
+
 
 const Home = () => {
   const [applications, setApplication] = useState([])
@@ -61,6 +58,7 @@ const Home = () => {
         <Button
           variant='primary'
           onClick={() => setShowFilterModal((val) => !val)}
+          style={{marginTop: 16}}
         >
           {t("set_filters")}
         </Button>
