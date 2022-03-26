@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
-import { HomeOutlined } from "@ant-design/icons"
 import { myApplications, deleteApplication } from "../actions/applications"
 import { toast } from "react-toastify"
 import { NewApplicationTypes, UserInStoreTypes } from "../types"
@@ -20,8 +19,16 @@ const MyAppliactions = () => {
   }, [])
 
   const loadMyApplications = async () => {
-    let { data } = await myApplications(auth.token)
-    setApplications(data)
+    setLoading(true)
+    try {   
+      let { data } = await myApplications(auth.token)
+      setApplications(data)
+    } catch (error) {
+        console.error(error)
+    } finally {
+      setLoading(false)
+    }
+
   }
 
   const handleApplicationDelete = async (hotelId) => {
@@ -39,7 +46,6 @@ const MyAppliactions = () => {
         <div className='row mt-4 mb-12'>
           <div className='text-center'>
             <h1>{t("YourApplications")}</h1>
-     
             <Link to='/application/new' className='btn btn-primary'>
               {t('AddNew')}
             </Link>
