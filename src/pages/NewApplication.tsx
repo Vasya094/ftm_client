@@ -64,7 +64,6 @@ const NewApplication = () => {
       (newApplicationInfoObject.finishLocation?.types[0] !== "locality" &&
         newApplicationInfoObject.finishLocation?.types[0] !== "neighborhood")
     ) {
-      debugger
       NotificationManager.warning(
         t("make_sure_that_city"),
         t("WarningMessage"),
