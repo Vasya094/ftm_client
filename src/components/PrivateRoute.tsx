@@ -1,6 +1,6 @@
 import { Outlet, Navigate } from "react-router-dom"
 import { useSelector } from "react-redux"
-import { UserInStoreTypes } from "../utils/tsTypes"
+import { UserInStoreTypes } from "../types"
 
 const PrivateRoute = ({ ...rest }) => {
   const { auth } = useSelector((state) => ({ ...state })) as {

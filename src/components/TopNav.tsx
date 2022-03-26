@@ -9,7 +9,7 @@ import {
   NavDropdown,
   Offcanvas,
 } from "react-bootstrap"
-import { UserInStoreTypes } from "../utils/tsTypes"
+import { UserInStoreTypes } from "../types"
 import { useTranslation } from "react-i18next"
 import { useState } from "react"
 import MainLogo from "./../images/home_icon.png"

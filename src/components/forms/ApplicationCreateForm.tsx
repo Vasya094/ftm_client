@@ -1,14 +1,12 @@
-// import AlgoliaPlaces from "algolia-places-react"
-import Geosuggest from "react-geosuggest"
 import { DatePicker } from "antd"
 import moment from "moment"
-import React, { useState } from "react"
-import { ApplicationCreateFormPropsTypes } from "../../utils/tsTypes"
+import React from "react"
+import { ApplicationCreateFormPropsTypes } from "../../types"
 import { FloatingLabel, Form } from "react-bootstrap"
 import SelectCity from "../SelectCity"
 import { useTranslation } from "react-i18next"
 
-const ApplicationCreateForm: React.FC<ApplicationCreateFormPropsTypes> = ({
+export const ApplicationCreateForm: React.FC<ApplicationCreateFormPropsTypes> = ({
   values,
   handleChange,
   handleSubmit,
@@ -116,4 +114,4 @@ const ApplicationCreateForm: React.FC<ApplicationCreateFormPropsTypes> = ({
   )
 }
 
-export default ApplicationCreateForm
+

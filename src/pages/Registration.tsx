@@ -28,7 +28,6 @@ const Register: React.FC<RouteProps> = () => {
       if (res.data) {
         toast.success(t('RegisterSuccess'))
         window.localStorage.setItem("auth", JSON.stringify(res.data))
-        debugger
         dispatch({
           type: "LOGGED_IN_USER",
           payload: res.data,
