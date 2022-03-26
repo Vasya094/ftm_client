@@ -59,9 +59,9 @@ const NewApplication = () => {
         3000
       )
     } else if (
-      (newApplicationInfoObject.startLocation?.types[0] !== "locality" ||
-        newApplicationInfoObject.finishLocation?.types[0] !== "locality") &&
-      (newApplicationInfoObject.startLocation?.types[0] !== "neighborhood" ||
+      (newApplicationInfoObject.startLocation?.types[0] !== "locality" &&
+        newApplicationInfoObject.startLocation?.types[0] !== "neighborhood") ||
+      (newApplicationInfoObject.finishLocation?.types[0] !== "locality" &&
         newApplicationInfoObject.finishLocation?.types[0] !== "neighborhood")
     ) {
       debugger
