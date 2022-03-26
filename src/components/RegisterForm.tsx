@@ -1,6 +1,6 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
-import { RegisterFormPropsTypes } from "../utils/tsTypes"
+import { RegisterFormPropsTypes } from "../types"
 
 const RegisterForm: React.FC<RegisterFormPropsTypes> = ({
   handleSubmit,

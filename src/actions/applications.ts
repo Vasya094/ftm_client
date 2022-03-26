@@ -1,5 +1,5 @@
-import axios from "axios"
-import { MainFiltersTypes, NewApplicationTypes } from "../utils/tsTypes"
+import axios from "axios";
+import { MainFiltersTypes, NewApplicationTypes } from "../types";
 
 export const createApplication = async (
   token: string,
@@ -9,7 +9,7 @@ export const createApplication = async (
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  })
+  });
 
 export const allApplications = async (
   currentLng: string = "en",
@@ -20,20 +20,20 @@ export const allApplications = async (
       ...filters,
       currentLng,
     },
-  })
+  });
 
 export const myApplications = async (token: string) =>
   await axios.get(`${process.env.REACT_APP_API}/my-applications`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  })
+  });
 
 export const deleteApplication = async (
   token: string,
   applicationId: string
 ) => {
-  debugger
+  debugger;
   await axios.delete(
     `${process.env.REACT_APP_API}/delete-application/${applicationId}`,
     {
@@ -41,10 +41,10 @@ export const deleteApplication = async (
         Authorization: `Bearer ${token}`,
       },
     }
-  )
-}
+  );
+};
 export const read = async (applicationId: string) =>
-  await axios.get(`${process.env.REACT_APP_API}/application/${applicationId}`)
+  await axios.get(`${process.env.REACT_APP_API}/application/${applicationId}`);
 
 // export const updateApplications = async (token: string, data, applicationId: string) =>
 //   await axios.put(
@@ -62,7 +62,7 @@ export const userApplications = async (token: string) =>
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  })
+  });
 
 export const isAlreadyBooked = async (token: string, applicationId: string) =>
   await axios.get(
@@ -72,7 +72,7 @@ export const isAlreadyBooked = async (token: string, applicationId: string) =>
         Authorization: `Bearer ${token}`,
       },
     }
-  )
+  );
 
 // export const searchListings = async (query) =>
 //   await axios.post(`${process.env.REACT_APP_API}/search-listings`, query);

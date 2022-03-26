@@ -1,13 +1,12 @@
 import { ChangeEvent, useState } from "react"
-import { DatePicker, Select } from "antd"
 import { createApplication } from "../actions/applications"
 import { useSelector } from "react-redux"
-import ApplicationCreateForm from "../components/forms/ApplicationCreateForm"
+import {ApplicationCreateForm} from "../components/forms/ApplicationCreateForm"
 import {
   LocationTypes,
   NewApplicationTypes,
   UserInStoreTypes,
-} from "../utils/tsTypes"
+} from "../types"
 import { useTranslation } from "react-i18next"
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
@@ -90,14 +89,13 @@ const NewApplication = () => {
 
   return (
     <>
-      <div className='container-fluid pt-4 text-center'>
+      <div className='container-fluid pt-4 pb-4 text-center'>
         <h2>{t("addNewApplication")}</h2>
       </div>
-      <hr />
-      <div className='container-fluid'>
+
+      <div className='container'>
         <div className='row'>
-          <div className='col-md-10'>
-            <br />
+    
             <ApplicationCreateForm
               values={values}
               handleChange={handleChange}
@@ -109,11 +107,8 @@ const NewApplication = () => {
               typeOfApplication={typeOfApplication}
               setTypeOfApplication={setTypeOfApplication}
             />
-          </div>
-          <div className='col-md-2'>
-            {/* <pre>{JSON.stringify(values, null, 4)}</pre>
-            {JSON.stringify(location)} */}
-          </div>
+       
+
         </div>
       </div>
       <NotificationContainer />

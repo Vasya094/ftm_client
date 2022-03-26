@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { LoginFormPropsTypes } from "../utils/tsTypes";
+import { LoginFormPropsTypes } from "../types";
 
 const LoginForm: React.FC<LoginFormPropsTypes> = ({
     handleSubmit,

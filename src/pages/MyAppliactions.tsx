@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { HomeOutlined } from "@ant-design/icons"
 import { myApplications, deleteApplication } from "../actions/applications"
 import { toast } from "react-toastify"
-import { NewApplicationTypes, UserInStoreTypes } from "../utils/tsTypes"
+import { NewApplicationTypes, UserInStoreTypes } from "../types"
 import SmallCard from "../components/SmallAppCard"
 import { useTranslation } from "react-i18next"
 
@@ -37,15 +37,14 @@ const MyAppliactions = () => {
     <>
       <div className='container-fluid'>
         <div className='row mt-4'>
-          <div className='col-md-10'>
+          <div className='text-center'>
             <h2>{t("YourApplications")}</h2>
-          </div>
-          <div className='col-md-2 mb-4'>
+     
             <Link to='/application/new' className='btn btn-primary'>
-              + {t('AddNew')}
+              {t('AddNew')}
             </Link>
-          </div>
-          <hr></hr>
+ 
+        </div>
         </div>
 
         <div className='row'>

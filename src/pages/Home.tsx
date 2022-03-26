@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next"
 import { allApplications } from "../actions/applications"
 import FilterModal from "../components/FilterModal"
 import SmallCard from "../components/SmallAppCard"
-import { MainFiltersTypes, NewApplicationTypes } from "../utils/tsTypes"
+import { MainFiltersTypes, NewApplicationTypes } from "../types"
 
 
 const Home = () => {
