@@ -59,8 +59,10 @@ const NewApplication = () => {
         3000
       )
     } else if (
-      newApplicationInfoObject.startLocation?.types[0] !== "locality" ||
-      newApplicationInfoObject.finishLocation?.types[0] !== "locality"
+      (newApplicationInfoObject.startLocation?.types[0] !== "locality" &&
+        newApplicationInfoObject.startLocation?.types[0] !== "neighborhood") ||
+      (newApplicationInfoObject.finishLocation?.types[0] !== "locality" &&
+        newApplicationInfoObject.finishLocation?.types[0] !== "neighborhood")
     ) {
       NotificationManager.warning(
         t("make_sure_that_city"),
@@ -68,15 +70,15 @@ const NewApplication = () => {
         3000
       )
     } else {
-    try {
-      let res = await createApplication(token, newApplicationInfoObject)
-      toast.success("New Application is posted")
-      setTimeout(() => {
-        window.location.reload()
-      }, 1000)
-    } catch (err) {
-      console.log(err)
-    }
+      try {
+        let res = await createApplication(token, newApplicationInfoObject)
+        toast.success("New Application is posted")
+        setTimeout(() => {
+          window.location.reload()
+        }, 1000)
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 
