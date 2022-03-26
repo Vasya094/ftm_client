@@ -53,23 +53,17 @@ const Home = () => {
 
   return (
     <>
-      <div className='container-fluid pt-4 text-center'>
+      <div className='container-fluid pt-4 mb-12 text-center'>
         <h1>{t("allApplications")}</h1>
         <Button
           variant='primary'
           onClick={() => setShowFilterModal((val) => !val)}
-          style={{marginTop: 16}}
         >
           {t("set_filters")}
         </Button>
       </div>
-      <div className='col'>
-        <br />
-        {/* <Search /> */}
-      </div>
+
       <div className='container-fluid'>
-        <br />
-        {/* <pre>{JSON.stringify(applications, null, 4)}</pre>  */}
         {applications.map((appl: NewApplicationTypes) => (
           <SmallCard key={appl._id} appl={appl} />
         ))}

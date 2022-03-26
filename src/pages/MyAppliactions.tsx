@@ -36,9 +36,9 @@ const MyAppliactions = () => {
   return (
     <>
       <div className='container-fluid'>
-        <div className='row mt-4'>
+        <div className='row mt-4 mb-12'>
           <div className='text-center'>
-            <h2>{t("YourApplications")}</h2>
+            <h1>{t("YourApplications")}</h1>
      
             <Link to='/application/new' className='btn btn-primary'>
               {t('AddNew')}

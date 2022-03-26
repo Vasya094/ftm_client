@@ -92,7 +92,7 @@ const NewApplication = () => {
   return (
     <>
       <div className='container-fluid pt-4 pb-4 text-center'>
-        <h2>{t("addNewApplication")}</h2>
+        <h1>{t("addNewApplication")}</h1>
       </div>
 
       <div className='container'>
