@@ -33,7 +33,6 @@ export const deleteApplication = async (
   token: string,
   applicationId: string
 ) => {
-  debugger;
   await axios.delete(
     `${process.env.REACT_APP_API}/delete-application/${applicationId}`,
     {
