@@ -17,7 +17,7 @@ const SmallCard = ({
 
   let navigate = useNavigate()
   const goToVievApp = (id: string) => {
-    navigate(`application/${id}`)
+    navigate(`/application/${id}`, { state: {}, replace: true })
   }
 
   const { t } = useTranslation()

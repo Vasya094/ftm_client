@@ -44,9 +44,6 @@ export const ViewApplication: React.FC<RouteProps> = ({ path }) => {
                   <b>{t('date_of_travel')}</b>: {moment(application?.travelDate).format('YYYY-MM-DD')}
               </span>
           </div>
-          <div className="mt-4">
-          <Button variant="primary">{t('write_to_app_owner')}</Button>
-          </div>
       </div>
       </div>
       </div>
