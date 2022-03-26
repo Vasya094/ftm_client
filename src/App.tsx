@@ -6,7 +6,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import NewApplication from "./pages/NewApplication"
 import PrivateRoute from "./components/PrivateRoute"
-import ViewApplication from "./pages/VievApplication"
+import {ViewApplication} from "./pages/VievApplication"
 import MyAppliactions from "./pages/MyAppliactions"
 
 

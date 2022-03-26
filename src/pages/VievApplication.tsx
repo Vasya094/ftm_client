@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react"
-import { useStore } from "react-redux"
 import { read } from "../actions/applications"
 import moment from "moment"
-import { useSelector } from "react-redux"
-import { loadStripe } from "@stripe/stripe-js"
-import { NewApplicationTypes, UserInStoreTypes } from "../types"
-import { RouteProps, useLocation, useParams } from "react-router-dom"
+import { NewApplicationTypes } from "../types"
+import { RouteProps, useParams } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { Button } from "react-bootstrap"
 
-const ViewApplication: React.FC<RouteProps> = ({ path }) => {
+export const ViewApplication: React.FC<RouteProps> = ({ path }) => {
   const [application, setApplication] = useState<NewApplicationTypes>()
-  const [loading, setLoading] = useState(false)
-
-  const { auth } = useSelector((state) => ({ ...state })) as {
-    auth: UserInStoreTypes
-  }
 
   useEffect(() => {
     loadSellerApplication()
@@ -36,26 +28,30 @@ const ViewApplication: React.FC<RouteProps> = ({ path }) => {
       <div className='container-fluid p-5 text-center'>
         <h1>{application?.title}</h1>
       </div>
-      <div>
-          <div>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-12 '>
+          <b>
               {t(application?.type === 'take' ? 'iWillTakeBig' : 'iWillSendBig',)}
-          </div>
-          <div>
-              <span>{t("from")}: </span><span>{application?.startLocation?.formatted_address}</span>
+          </b>
+          <div className="mt-2">
+              <span><b>{t("from")}</b>: </span><span>{application?.startLocation?.formatted_address}</span>
               <span> - </span>
-              <span>{t("to")}: </span><span>{application?.finishLocation?.formatted_address}</span>
+              <span><b>{t("to")}</b>: </span><span>{application?.finishLocation?.formatted_address}</span>
           </div>
-          <div>
+          <div  className="mt-2">
               <span>
-                  {t('date_of_travel')}: {moment(application?.travelDate).format('YYYY-MM-DD')}
+                  <b>{t('date_of_travel')}</b>: {moment(application?.travelDate).format('YYYY-MM-DD')}
               </span>
           </div>
-          <div>
+          <div className="mt-4">
           <Button variant="primary">{t('write_to_app_owner')}</Button>
           </div>
+      </div>
+      </div>
       </div>
     </>
   )
 }
 
-export default ViewApplication
+
