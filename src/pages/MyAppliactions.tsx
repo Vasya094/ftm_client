@@ -20,9 +20,15 @@ const MyAppliactions = () => {
 
   const loadMyApplications = async () => {
     setLoading(true)
-    let { data } = await myApplications(auth.token)
-    setApplications(data)
-    setLoading(false)
+    try {   
+      let { data } = await myApplications(auth.token)
+      setApplications(data)
+    } catch (error) {
+        console.error(error)
+    } finally {
+      setLoading(false)
+    }
+
   }
 
   const handleApplicationDelete = async (hotelId) => {
