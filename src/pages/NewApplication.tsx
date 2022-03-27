@@ -26,6 +26,7 @@ const NewApplication = () => {
     pricePerKg: 0,
     addedBy: "",
     travelDate: "",
+    communicationWays: "",
   })
   const [typeOfApplication, setTypeOfApplication] = useState<boolean>(true)
   const { t } = useTranslation()
