@@ -3,8 +3,8 @@ import { LoginFormPropsTypes } from "../types";
 
 const LoginForm: React.FC<LoginFormPropsTypes> = ({
     handleSubmit,
-    email,
-    setEmail,
+    userName,
+    setUserName,
     password,
     setPassword,
   }) => {
@@ -12,13 +12,13 @@ const LoginForm: React.FC<LoginFormPropsTypes> = ({
 
    return ( <form onSubmit={handleSubmit} className="mt-3">
       <div className="form-group mb-3">
-        <label className="form-label">{t('email_in_form')}</label>
+        <label className="form-label">{t('nickname')}</label>
         <input
-          type="email"
+          type="text"
           className="form-control"
-          placeholder={t('email_in_form_placeholder')}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          placeholder={t('nickname_in_form_placeholder')}
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
         />
       </div>
   
@@ -33,7 +33,7 @@ const LoginForm: React.FC<LoginFormPropsTypes> = ({
         />
       </div>
   
-      <button disabled={!email || !password} className="btn btn-primary">
+      <button disabled={!userName || !password} className="btn btn-primary">
       {t('login')}
       </button>
     </form>)

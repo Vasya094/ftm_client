@@ -7,7 +7,7 @@ import { RouteProps, useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 
 const Login: React.FC<RouteProps> = () => {
-  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
@@ -15,9 +15,9 @@ const Login: React.FC<RouteProps> = () => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    console.log("SEND LOGIN DATA", { email, password });
+    console.log("SEND LOGIN DATA", { userName, password });
     try {
-      let res = await login({ email, password });
+      let res = await login({ userName, password });
 
       if (res.data) {
         console.log(
@@ -50,8 +50,8 @@ const Login: React.FC<RouteProps> = () => {
           <div className="col-md-6 offset-md-3">
             <LoginForm
               handleSubmit={handleSubmit}
-              email={email}
-              setEmail={setEmail}
+              userName={userName}
+              setUserName={setUserName}
               password={password}
               setPassword={setPassword}
             />

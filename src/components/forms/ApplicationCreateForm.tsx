@@ -38,7 +38,7 @@ export const ApplicationCreateForm: React.FC<ApplicationCreateFormPropsTypes> = 
           <span className='text-center'>{t("iWillTake_short")}</span>
         </div>
         <hr />
-        <Form.Group className='mb-4' controlId='formBasicEmail'>
+        <Form.Group className='mb-4'>
           <Form.Label>{t("Title")}</Form.Label>
           <Form.Control
             type='text'
