@@ -12,13 +12,11 @@ export const createApplication = async (
   });
 
 export const allApplications = async (
-  currentLng: string = "en",
   filters?: MainFiltersTypes
 ) =>
   await axios.get(`${process.env.REACT_APP_API}/applications`, {
     params: {
       ...filters,
-      currentLng,
     },
   });
 
@@ -72,6 +70,3 @@ export const isAlreadyBooked = async (token: string, applicationId: string) =>
       },
     }
   );
-
-// export const searchListings = async (query) =>
-//   await axios.post(`${process.env.REACT_APP_API}/search-listings`, query);

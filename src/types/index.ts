@@ -41,12 +41,17 @@ export interface LocationTypes {
   types: string[]
 }
 
+export interface LocationTypeNew {
+  placeId: string
+  namesInLangs: { en: string; ru: string; ar: string }[] | {}
+}
+
 export interface NewApplicationTypes {
   title: string
   description: string
   _id?: string
-  startLocation?: LocationTypes
-  finishLocation?: LocationTypes
+  startLocation?: LocationTypeNew
+  finishLocation?: LocationTypeNew
   pricePerKg: number | string
   addedBy: string
   communicationWays: string

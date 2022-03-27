@@ -24,17 +24,12 @@ const Home = () => {
     loadAllApplications(currentLanguage)
   }, [])
 
-  i18next.on("languageChanged", function (lng) {
-    loadAllApplications(lng)
-  })
-
   const loadAllApplications = async (
-    currentLng: string,
     filters?: MainFiltersTypes
   ) => {
     setShowFLoader(true)
     try {
-      let res = await allApplications(currentLng, filters)
+      let res = await allApplications(filters)
 
       setApplication(res.data)
       setShowFLoader(false)
@@ -44,7 +39,7 @@ const Home = () => {
   }
 
   const handleFilterSubmit = async () => {
-    loadAllApplications(currentLanguage, {
+    loadAllApplications({
       startLocation,
       finishLocation,
       type: typeOfApplication,

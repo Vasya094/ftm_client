@@ -1,19 +1,16 @@
 // import { diffDays } from "../../actions/hotel";
-import { Link, useNavigate } from "react-router-dom"
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons"
+import { useNavigate } from "react-router-dom"
 import { Card, Button } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import moment from "moment"
-import { useEffect, useState } from "react"
+import i18next from "i18next"
 
 const SmallCard = ({
   appl,
   handleApplicationDelete = (f) => f,
   owner = false,
-  showViewMoreButton = true,
 }) => {
-  const [startCityLocalName, setStartCityLocalName] = useState("")
-  const [finishCityLocalName, setFinishCityLocalName] = useState("")
+  const currentLanguage = i18next.language || window.localStorage.i18nextLng
 
   let navigate = useNavigate()
   const goToVievApp = (id: string) => {
@@ -35,12 +32,12 @@ const SmallCard = ({
           <Card.Text>
             <span>
               {t("from")} {appl.startCityInfoLoc} (
-              {appl.startLocation.formatted_address})
+              {appl.startLocation.namesInLangs[currentLanguage]})
             </span>{" "}
             -{" "}
             <span>
               {t("to")} {appl.finishCityInfoLoc} (
-              {appl.finishLocation.formatted_address})
+              {appl.finishLocation.namesInLangs[currentLanguage]})
             </span>
           </Card.Text>
           <div className='flex justify-between'>

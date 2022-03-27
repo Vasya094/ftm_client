@@ -1,14 +1,9 @@
-import { ChangeEvent, useState } from "react"
+import { useState } from "react"
 import { createApplication } from "../actions/applications"
 import { useSelector } from "react-redux"
-import {ApplicationCreateForm} from "../components/forms/ApplicationCreateForm"
-import {
-  LocationTypes,
-  NewApplicationTypes,
-  UserInStoreTypes,
-} from "../types"
+import { ApplicationCreateForm } from "../components/forms/ApplicationCreateForm"
+import { LocationTypes, NewApplicationTypes, UserInStoreTypes } from "../types"
 import { useTranslation } from "react-i18next"
-import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import "react-notifications/lib/notifications.css"
 import { NotificationContainer, NotificationManager } from "react-notifications"
@@ -71,8 +66,23 @@ const NewApplication = () => {
       )
     } else {
       try {
-        let res = await createApplication(token, newApplicationInfoObject)
-        toast.success("New Application is posted")
+        let newAppToReq = {
+          ...newApplicationInfoObject,
+          startLocation: {
+            placeId: newApplicationInfoObject.startLocation.place_id,
+            namesInLangs: {},
+          },
+          finishLocation: {
+            placeId: newApplicationInfoObject.finishLocation.place_id,
+            namesInLangs: {},
+          },
+        }
+        let res = await createApplication(token, newAppToReq)
+        NotificationManager.success(
+          t("applicatiob_success_created"),
+          t("SuccessMessage"),
+          3000
+        )
         setTimeout(() => {
           window.location.reload()
         }, 1000)
@@ -98,20 +108,17 @@ const NewApplication = () => {
 
       <div className='container'>
         <div className='row'>
-    
-            <ApplicationCreateForm
-              values={values}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              startLocation={startLocation}
-              finishLocation={finishLocation}
-              setStartLocation={setStartLocation}
-              setFinishLocation={setFinishLocation}
-              typeOfApplication={typeOfApplication}
-              setTypeOfApplication={setTypeOfApplication}
-            />
-       
-
+          <ApplicationCreateForm
+            values={values}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            startLocation={startLocation}
+            finishLocation={finishLocation}
+            setStartLocation={setStartLocation}
+            setFinishLocation={setFinishLocation}
+            typeOfApplication={typeOfApplication}
+            setTypeOfApplication={setTypeOfApplication}
+          />
         </div>
       </div>
       <NotificationContainer />

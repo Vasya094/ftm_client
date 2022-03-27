@@ -58,7 +58,6 @@ const MyAppliactions = () => {
             <SmallCard
               key={appl._id}
               appl={appl}
-              showViewMoreButton={false}
               owner={true}
               handleApplicationDelete={handleApplicationDelete}
             />

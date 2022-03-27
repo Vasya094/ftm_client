@@ -5,6 +5,7 @@ import { NewApplicationTypes } from "../types"
 import { RouteProps, useParams } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { Button } from "react-bootstrap"
+import i18next from "i18next"
 
 export const ViewApplication: React.FC<RouteProps> = ({ path }) => {
   const [application, setApplication] = useState<NewApplicationTypes>()
@@ -12,6 +13,8 @@ export const ViewApplication: React.FC<RouteProps> = ({ path }) => {
   useEffect(() => {
     loadSellerApplication()
   }, [])
+
+  const currentLanguage = i18next.language || window.localStorage.i18nextLng
 
   const { applicationId } = useParams()
 
@@ -35,9 +38,9 @@ export const ViewApplication: React.FC<RouteProps> = ({ path }) => {
               {t(application?.type === 'take' ? 'iWillTakeBig' : 'iWillSendBig',)}
           </b>
           <div className="mt-2">
-              <span><b>{t("from")}</b>: </span><span>{application?.startLocation?.formatted_address}</span>
+              <span><b>{t("from")}</b>: </span><span>{application?.startLocation?.namesInLangs[currentLanguage]}</span>
               <span> - </span>
-              <span><b>{t("to")}</b>: </span><span>{application?.finishLocation?.formatted_address}</span>
+              <span><b>{t("to")}</b>: </span><span>{application?.finishLocation?.namesInLangs[currentLanguage]}</span>
           </div>
           <div  className="mt-2">
               <span>
