@@ -67,5 +67,10 @@
   "Filters": "Filters",
   "Close": "Close",
   "ResetFilters": "Reset Filters",
-  "SaveChanges": "Save Changes"
+  "SaveChanges": "Save Changes",
+  "nickname": "Nickname",
+  "nickname_in_form_placeholder": "Please enter a nickname",
+  "userName_is_taken": "This NickName is taken",
+  "unknown_error": "Something is wrong, please try again",
+  "taken_username_info_under_input": "Sorry, but this nickname is already taken, choose another one for yourself, in the nickname you can use combinations of letters, numbers and special characters"
 }

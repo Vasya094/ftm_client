@@ -2,23 +2,25 @@ export interface RegisterFormPropsTypes {
   handleSubmit(e: any): Promise<void>
   name: string
   setName(field: string): void
-  email: string
-  setEmail(field: string): void
+  userName: string
+  setUserName(field: string): void
   password: string
   setPassword(field: string): void
+  showTipUnderUsername: boolean
+  setShowTipUnderUsername(field: boolean): void
 }
 
 export interface LoginFormPropsTypes {
   handleSubmit(e: any): Promise<void>
-  email: string
-  setEmail(field: string): void
+  userName: string
+  setUserName(field: string): void
   password: string
   setPassword(field: string): void
 }
 
 export interface UserToAuthTypes {
   name?: string
-  email: string
+  userName: string
   password: string
 }
 
@@ -27,7 +29,7 @@ export interface UserInStoreTypes {
   user: {
     _id: string
     name: string
-    email: string
+    userName: string
     createdAt: string
     updatedAt: string
   }
