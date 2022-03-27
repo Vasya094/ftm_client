@@ -7,7 +7,6 @@ import FilterModal from "../components/FilterModal"
 import SmallCard from "../components/SmallAppCard"
 import { MainFiltersTypes, NewApplicationTypes } from "../types"
 
-
 const Home = () => {
   const [applications, setApplication] = useState([])
   const [showFilterModal, setShowFilterModal] = useState(false)
@@ -17,7 +16,7 @@ const Home = () => {
 
   const [startLocation, setStartLocation] = useState("")
   const [finishLocation, setFinishLocation] = useState("")
-  const [typeOfApplication, setTypeOfApplication] = useState('')
+  const [typeOfApplication, setTypeOfApplication] = useState("")
 
   const currentLanguage = i18next.language || window.localStorage.i18nextLng
 
@@ -29,21 +28,22 @@ const Home = () => {
     loadAllApplications(lng)
   })
 
-  const loadAllApplications = async (currentLng: string, filters?: MainFiltersTypes) => {
+  const loadAllApplications = async (
+    currentLng: string,
+    filters?: MainFiltersTypes
+  ) => {
     setShowFLoader(true)
+    try {
+      let res = await allApplications(currentLng, filters)
 
-    let res = await allApplications(currentLng, filters)
-
-    setApplication(res.data)
-    setShowFLoader(false)
+      setApplication(res.data)
+      setShowFLoader(false)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const handleFilterSubmit = async () => {
-    console.log({
-      startLocation,
-      finishLocation,
-      type: typeOfApplication,
-    })
     loadAllApplications(currentLanguage, {
       startLocation,
       finishLocation,

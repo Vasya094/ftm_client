@@ -49,6 +49,7 @@ export interface NewApplicationTypes {
   finishLocation?: LocationTypes
   pricePerKg: number | string
   addedBy: string
+  communicationWays: string
   travelDate: string | Date
   cargoInfo?: {
     willNotTake?: string
