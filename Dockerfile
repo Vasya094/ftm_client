@@ -1,21 +1,17 @@
-# pull official base image
-FROM node:17-slim
-
-# set working directory
+FROM node:14-alpine AS deps
 WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
-RUN npm install react-scripts@3.4.1 -g
-
-# add app
-COPY . ./
-COPY . ./app
-
-# start app
-CMD ["npm", "start"]
+COPY package.json package-lock.json ./
+RUN npm install react-scripts -g --silent
+RUN npm ci
+# --------------------------------------
+FROM node:14-alpine AS builder
+WORKDIR /app
+COPY . .
+COPY --from=deps /app/node_modules ./node_modules
+RUN npm run build
+# --------------------------------------
+FROM nginx:latest
+EXPOSE 80
+COPY --from=builder /app/build/ /var/www/html
+COPY ./nginx/default.conf /etc/nginx/conf.d
+CMD ["nginx", "-g", "daemon off;"]
