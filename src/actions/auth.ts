@@ -1,6 +1,8 @@
 import axios, { AxiosError, AxiosResponse } from "axios"
 import { UserToAuthTypes } from "../types"
 
+console.log(process.env)
+
 export const register = async (user: UserToAuthTypes) =>
   await axios.post(`${process.env.REACT_APP_API}/register`, user);
 
