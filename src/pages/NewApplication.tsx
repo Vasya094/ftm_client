@@ -18,7 +18,7 @@ const NewApplication = () => {
   const [values, setValues] = useState<NewApplicationTypes>({
     title: "",
     description: "",
-    pricePerKg: 0,
+    pricePerKg: undefined,
     addedBy: "",
     travelDate: "",
     communicationWays: "",

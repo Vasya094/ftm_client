@@ -52,7 +52,7 @@ export interface NewApplicationTypes {
   _id?: string
   startLocation?: LocationTypeNew
   finishLocation?: LocationTypeNew
-  pricePerKg: number | string
+  pricePerKg?: number | string
   addedBy: string
   communicationWays: string
   travelDate: string | Date

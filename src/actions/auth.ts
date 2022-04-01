@@ -1,13 +1,16 @@
 import axios, { AxiosError, AxiosResponse } from "axios"
 import { UserToAuthTypes } from "../types"
 
-console.log(process.env)
+const apiUrl =
+  process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_API_PROD
+    : process.env.REACT_APP_API
 
 export const register = async (user: UserToAuthTypes) =>
-  await axios.post(`${process.env.REACT_APP_API}/register`, user);
+  await axios.post(`${apiUrl}/register`, user);
 
 export const login = async (user: UserToAuthTypes) =>
-  await axios.post(`${process.env.REACT_APP_API}/login`, user)
+  await axios.post(`${apiUrl}/login`, user)
 
 // update user in local storage
 export const updateUserInLocalStorage = (
