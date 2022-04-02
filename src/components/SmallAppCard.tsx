@@ -26,9 +26,11 @@ const SmallCard = ({
           {appl.type === "send" ? t("iWillSend") : t("iWillTake")}
         </Card.Header>
         <Card.Body>
-          <Card.Title>
-            {moment(appl?.travelDate).format("YYYY-MM-DD")}
-          </Card.Title>
+          {appl.type === "take" && (
+            <Card.Title>
+              {moment(appl?.travelDate).format("YYYY-MM-DD")}
+            </Card.Title>
+          )}
           <Card.Text>
             <span>
               {t("from")} {appl.startCityInfoLoc} (

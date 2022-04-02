@@ -47,6 +47,7 @@
   "iWillSend_short": "I will send",
   "date_of_trave_shortl": "Date of the travel",
   "PricePerKg": "Price Per Kg in $",
+  "PricePerKgPlaceholder": "Price Per Kg of package in $",
   "communicationWays": "Contact details",
   "save": "Save",
   "Title": "Title",
@@ -74,5 +75,9 @@
   "unknown_error": "Something is wrong, please try again",
   "taken_username_info_under_input": "Sorry, but this nickname is already taken, choose another one for yourself, in the nickname you can use combinations of letters, numbers and special characters",
   "SuccessMessage": "Success",
-  "applicatiob_success_created": "Application successfully created"
+  "applicatiob_success_created": "Application successfully created",
+  "application_info_comment": "Additional Information",
+  "how_to_connect_with_me": "How to connect with me",
+  "added_by": "Added by",
+  "set_travel_date": "Set travel date"
 }

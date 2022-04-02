@@ -19,7 +19,7 @@
     "i": "^0.3.7",
     "i18next": "^19.5.0",
     "i18next-browser-languagedetector": "^5.0.0",
-    "i18next-http-backend": "^1.0.15",
+    "i18next-http-backend": "^1.4.0",
     "i18next-localstorage-cache": "^1.1.1",
     "moment": "^2.29.1",
     "npm": "^8.5.5",
