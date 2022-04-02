@@ -47,6 +47,7 @@
   "iWillSend_short": "سأرسل",
   "date_of_trave_shortl": "تاريخ السفر",
   "PricePerKg": "سعر كيلو بدولار",
+  "PricePerKgPlaceholder": "سعر كيلو من وزن الطرد بدولار",
   "communicationWays": "طرق التواصل",
   "save": "حفظ",
   "Title": "عنوان",
@@ -74,6 +75,9 @@
   "unknown_error": "حدث الخطأ حاول مرة أخرى",
   "taken_username_info_under_input": "عذرًا ، لكن هذا اللقب مأخوذ بالفعل ، اختر اسمًا آخر لنفسك ، في اللقب يمكنك استخدام مجموعات من الأحرف والأرقام والأحرف الخاصة",
   "SuccessMessage": "تم بالنجاح",
-  "applicatiob_success_created": "تم إنشاء الإعلان بالنجاح" 
-
+  "applicatiob_success_created": "تم إنشاء الإعلان بالنجاح",
+  "application_info_comment": "معلومات إضافية",
+  "how_to_connect_with_me": "كيف تتواصل معي",
+  "added_by": "المعلن",
+  "set_travel_date": "حدد تاريخ سفرك"
 }

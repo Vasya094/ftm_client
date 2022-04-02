@@ -39,7 +39,6 @@ const SelectCity = ({ location, placeholder, setLocation, justPlaceId }) => {
 
       getGeocode({ address: description })
         .then((results) => {
-          console.log(results)
           if (justPlaceId) {
             setLocation(results[0].place_id)
           } else {

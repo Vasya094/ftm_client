@@ -64,6 +64,24 @@ export interface NewApplicationTypes {
   createdAt?: string
   updatedAt?: string
 }
+export interface ApplicationTypes {
+  title: string
+  description: string
+  _id?: string
+  startLocation?: LocationTypeNew
+  finishLocation?: LocationTypeNew
+  pricePerKg?: number | string
+  addedBy: { name: string; _id: string }
+  communicationWays: string
+  travelDate: string | Date
+  cargoInfo?: {
+    willNotTake?: string
+    iCanGoAndBuy?: boolean
+  }
+  type?: string
+  createdAt?: string
+  updatedAt?: string
+}
 
 export interface ApplicationCreateFormPropsTypes {
   values: NewApplicationTypes

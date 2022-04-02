@@ -1,10 +1,11 @@
 import { DatePicker } from "antd"
 import moment from "moment"
 import React from "react"
-import { ApplicationCreateFormPropsTypes } from "../../types"
-import { FloatingLabel, Form } from "react-bootstrap"
-import SelectCity from "../SelectCity"
 import { useTranslation } from "react-i18next"
+import { Form } from "react-bootstrap"
+
+import { ApplicationCreateFormPropsTypes } from "../../types"
+import SelectCity from "../SelectCity"
 
 export const ApplicationCreateForm: React.FC<ApplicationCreateFormPropsTypes> =
   ({
@@ -87,7 +88,8 @@ export const ApplicationCreateForm: React.FC<ApplicationCreateFormPropsTypes> =
               <DatePicker
                 name='travelDate'
                 className='w-full'
-                defaultValue={travelDate ? moment(travelDate) : moment()}
+                placeholder={t("set_travel_date")}
+                defaultValue={travelDate ? moment(travelDate) : undefined}
                 onChange={handleChange}
                 disabledDate={disabledDate}
               />
@@ -117,7 +119,7 @@ export const ApplicationCreateForm: React.FC<ApplicationCreateFormPropsTypes> =
                 name='pricePerKg'
                 onChange={handleChange}
                 min='0'
-                placeholder='Price Per Kg / $'
+                placeholder={t("PricePerKgPlaceholder")}
                 value={pricePerKg}
               />
             </div>
