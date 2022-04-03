@@ -79,5 +79,10 @@
   "application_info_comment": "Additional Information",
   "how_to_connect_with_me": "How to connect with me",
   "added_by": "Added by",
-  "set_travel_date": "Set travel date"
+  "set_travel_date": "Set travel date",
+  "add_new_app": "Add application",
+  "have_not_account_go_to_reg": "Don't have account? Please ",
+  "reg_text_finish": "sign up",
+  "already_have_account": "Already have an account? ",
+  "log_text_finish": "Login"
 }

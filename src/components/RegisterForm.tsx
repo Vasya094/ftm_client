@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 import { RegisterFormPropsTypes } from "../types"
 
 const RegisterForm: React.FC<RegisterFormPropsTypes> = ({
@@ -60,6 +61,10 @@ const RegisterForm: React.FC<RegisterFormPropsTypes> = ({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+      </div>
+      
+      <div>
+        <p>{t("already_have_account")}<Link to='/login'>{t('log_text_finish')}</Link></p>
       </div>
 
       <button

@@ -79,5 +79,10 @@
   "application_info_comment": "معلومات إضافية",
   "how_to_connect_with_me": "كيف تتواصل معي",
   "added_by": "المعلن",
-  "set_travel_date": "حدد تاريخ سفرك"
+  "set_travel_date": "حدد تاريخ سفرك",
+  "add_new_app": "إنشاء الإعلان",
+  "have_not_account_go_to_reg": "ليس عندك حساب؟ سجل ",
+  "reg_text_finish": "حسابا جديدا",
+  "already_have_account": "لديك حساب؟ ",
+  "log_text_finish": "سجل الدخول"
 }
