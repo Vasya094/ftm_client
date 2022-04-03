@@ -20,8 +20,8 @@ const SmallCard = ({
   const { t } = useTranslation()
 
   return (
-    <div className='mb-4'>
-      <Card border={appl.type === "send" ? "primary" : "secondary"}>
+    <div>
+      <Card className="h-full" border={appl.type === "send" ? "primary" : "secondary"}>
         <Card.Header as='h5'>
           {appl.type === "send" ? t("iWillSend") : t("iWillTake")}
         </Card.Header>

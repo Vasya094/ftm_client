@@ -79,5 +79,10 @@
   "application_info_comment": "Дополнительная информация",
   "how_to_connect_with_me": "Как со мной связаться",
   "added_by": "От пользователя",
-  "set_travel_date": "Установите дату поездки"
+  "set_travel_date": "Установите дату поездки",
+  "add_new_app": "Подать заявку",
+  "have_not_account_go_to_reg": "Нет учетной записи? Пройдите ",
+  "reg_text_finish": "регистрацию",
+  "already_have_account": "Уже зарегистрированы? ",
+  "log_text_finish": "Войдите в систему"
 }

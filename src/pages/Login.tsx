@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
-import { login } from "../actions/auth";
-import LoginForm from "../components/LoginForm";
 import { useDispatch } from "react-redux";
 import { RouteProps, useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
+
+import { login } from "../actions/auth";
+import LoginForm from "../components/LoginForm";
 
 const Login: React.FC<RouteProps> = () => {
   const [userName, setUserName] = useState("");

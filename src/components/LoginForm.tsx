@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { LoginFormPropsTypes } from "../types";
 
 const LoginForm: React.FC<LoginFormPropsTypes> = ({
@@ -31,6 +32,10 @@ const LoginForm: React.FC<LoginFormPropsTypes> = ({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+      </div>
+
+      <div>
+        <p>{t('have_not_account_go_to_reg')}<Link to='/register'>{t('reg_text_finish')}</Link></p>
       </div>
   
       <button disabled={!userName || !password} className="btn btn-primary">
